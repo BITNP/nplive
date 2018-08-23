@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Nplive-网络开拓者协会</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="layui/css/layui.css" rel="stylesheet" media="all">
+    <link href="css/video-js.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/video.min.js"></script>
+    <script src="js/videojs-contrib-hls.js"></script>
+    <script src="layui/layui.js" charset="utf-8"></script>
+    <script src="js/react.js"></script>
+    <script src="js/play.js"></script>
+  </head>
+
+  <body>
+    <div class="back1">
+      <div class="container" style="padding-top:30px;" align="center">
+        <ul class="layui-nav" style="background-color: white;">
+          <li class="layui-nav-item" style="float:left">
+            <a href="index.html">
+              <img src="img/Logo3.png" class="img-responsive" alt="Nplive" width="200" height="50"></a>
+          </li>
+          <li class="layui-nav-item" id="nav-aboutUs" style="float: right;">
+            <a href="javascript:;" class="whiteIfHovered">关于我们</a>
+            <dl class="layui-nav-child">
+              <dd>
+                <a href="">主席团</a></dd>
+              <dd>
+                <a href="">网络部</a></dd>
+              <dd>
+                <a href="">技术部</a></dd>
+              <dd>
+                <a href="">组织部</a></dd>
+              <dd>
+                <a href="">电脑诊所</a></dd>
+              <dd>
+                <a href="">数字媒体部</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item" id="nav-joinUs" style="float: right;">
+            <a href="http://www.bitnp.net/join-us/" class="whiteIfHovered">加入我们</a></li>
+          <li class="layui-nav-item" id="nav-bitnpIndex" style="float: right;">
+            <a href="http://www.bitnp.net" class="whiteIfHovered">网协主页</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="back2">
+      <div class="container" style="height: 20%">
+        <video id="video_1" class="video-js vjs-default-skin vjs-big-play-centered " controls preload="none" width="500" poster="img/cover.png" data-setup="{}" style="vertical-align: middle">
+          <source src="http://livestream.bitnp.net:8092/nplive/livestream.m3u8" type="application/x-mpegURL" />
+          <source src="rtmp://livestream.bitnp.net:8092/nplive/" type="rtmp/flv" />
+          <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track>
+          <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track>
+        </video>
+      </div>
+    </div>
+    <div class="back4">
+      <hr color="#ccc" width="100%" />
+      <div class="bottom">Copyright 2017 BIT NetPioneer All Rights Reserved. Designed by BITNP.</div></div>
+    <script>layui.use('element',
+      function() {
+        var element = layui.element();
+        element.on('nav(demo)',
+        function(elem) {
+          layer.msg(elem.text());
+        });
+      });</script>
+    <script>function thisIsNone() {
+        alert("暂不开放，敬请期待！");
+      };
+      var videoPlayer = videojs("video_1");
+      function changeMovie(url) {
+        videoPlayer.src(url);
+        videoPlayer.load(url);
+        videoPlayer.play();
+      }
+      function aaa() {
+        videoPlayer.width($('.container').eq(1).width());
+      }
+      function getArgs() {
+        var args = {};
+        var match = null;
+        var search = decodeURIComponent(location.search.substring(1));
+        var reg = /(?:([^&]+)=([^&]+))/g;
+        while ((match = reg.exec(search)) !== null) {
+          args[match[1]] = match[2];
+        }
+        return args;
+      }
+      args = getArgs();
+      if (args['video'] != "undefined") {
+        videoPlayer.src(args['video']);
+        videoPlayer.load(args['video']);
+        videoPlayer.play();
+      }</script>
+  </body>
+
+</html>

@@ -1,0 +1,172 @@
+body{
+	background-color: rgb(242,242,242);
+	margin: 0;
+	padding: 0;
+}
+.back1{
+	background-color: rgb(242,242,242);
+
+}
+.back2{
+	background-color: rgb(242,242,242);
+
+}
+.back3{
+	background-color: rgb(242,242,242);
+
+}
+.back4{
+	background-color: rgb(242,242,242);
+}
+
+#top-nav{
+	width: 300px;
+	height: 300px;
+}
+
+#history:after, .history-section:after, .content:after{
+	content: "";
+	display: block;
+	clear:both;
+}
+
+.bottom{
+	font-size:18px;
+	padding: 20px 0;
+	text-align: center;
+	line-height: 18px;
+	color: rgb(127,127,127);
+}
+
+#history{
+	position: relative;
+	margin: 0 auto;
+}
+
+.history-section{
+	margin: 0px;
+	padding: 0px;
+}
+
+.content{
+	float: left;
+	width: 250px;
+	margin: 0px;
+	margin-right: 20px;
+}
+
+
+.history1120{
+	width: 1120px;
+}
+
+.history-section1120{
+	width: 1080px;
+}
+
+/*.content1120{
+	width: 250px;
+}
+*/
+
+
+.history940{
+	width: 940px;
+}
+
+.history-section940{
+	width: 900px;
+}
+
+/*.content940{
+	width: 250px;
+}
+*/
+
+.history720{
+	width: 720px;
+}
+
+.history-section720{
+	width: 720px;
+}
+/*
+.content720{
+	width: 250px;
+}*/
+
+
+.history100{
+	width: 100%;
+}
+
+.history-section100{
+	width: 100%;
+}
+
+.content100{
+	width: 80%;
+	margin: 10px 10%;
+}
+
+.container{
+	padding: 0;
+}
+
+.title-more{
+	width: 100%;
+	height: 28px;
+	position: relative;
+	margin-bottom: 5px;
+}
+
+.title{
+	position: absolute;
+	left: 0;
+	font-size: 24px;
+	line-height: 26px;
+	font-family:'微软雅黑';
+	color: rgb(127,127,127);
+}
+
+.more{
+	position: absolute;
+	right: 0;
+	font-size: 18px;
+	font-family:'微软雅黑';
+	line-height: 26px;
+	color: rgb(127,127,127);
+}
+
+.more-open{
+	display:none;
+}
+
+.content a{
+	color: rgb(127,127,127);
+	font-family:'微软雅黑';
+	font-size: 14px;
+	line-height: 10px;
+	padding: 20px 0;
+	display: block;
+	height: 27px;
+}
+.content img{
+	cursor: pointer;
+}
+.more a{
+	color: rgb(127,127,127);
+	display: block;
+}
+.more a:hover{
+	text-decoration: none;
+}
+
+.content, #history， .title-more{
+	/*border: solid 1px black;*/
+	text-align:center;
+}
+
+.layui-nav-item a:hover{
+	color: rgb(127,127,127);
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>Nplive-网络开拓者协会</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="layui/css/layui.css"  media="all"> 
+    <!-- <link href='http://cdn.webfont.youziku.com/webfonts/nomal/106582/1015/5997aab2f629d81b34683489.css' rel='stylesheet' type='text/css' /> -->
+    <link href="css/video-js.css" rel="stylesheet">
+    <script src="js/video.min.js"></script>
+    <script src="js/videojs-contrib-hls.js"></script>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="layui/layui.js" charset="utf-8"></script>
+    <script src="js/react.js"></script>
+    <script src="js/play.js"></script>
+
+  </head>
+  <body>
+    <!-- 标题栏 -->
+    <div class="back1">
+    <div class="container" style="padding-top:30px;" align="center">    
+      <ul class="layui-nav" style="background-color: white;">
+          <li class="layui-nav-item" style="float:left">
+          <a href="index.html">
+            <img src="img/logo3.png" class="img-responsive" alt="Nplive" width="200" height="50">
+          </a>
+          </li>
+          <li class="layui-nav-item" style="float: right;">
+          <a href="javascript:;" class="whiteIfHovered">关于我们</a>
+          <dl class="layui-nav-child">
+              <dd><a href="">主席团</a></dd>
+              <dd><a href="">网络部</a></dd>
+              <dd><a href="">技术部</a></dd>
+              <dd><a href="">组织部</a></dd>
+              <dd><a href="">电脑诊所</a></dd>
+              <dd><a href="">数字媒体部</a></dd>
+              <!-- <dd><a href="">技术保障中心</a></dd> -->
+          </dl>
+          </li>
+          <li class="layui-nav-item" id="nav-bitnpIndex" style="float: right;"><a href="index.html" class="whiteIfHovered">网协主页</a></li>
+        </ul>
+    </div>
+    </div>
+    <!-- video -->
+    <div class="back2">
+  <div class="container" style="height: 20%">
+      <video id="video_1" class="video-js vjs-default-skin vjs-big-play-centered " controls preload="none" width="500" poster="photos/img (1).JPG" data-setup="{}" style="vertical-align: middle">
+    <source src="http://10.2.70.102:8092/nplive/livestream.m3u8" type="application/x-mpegURL" />
+    <source src="rtmp://10.2.70.102:8092/nplive/" type="rtmp/flv" />
+    <source src="http://livestream.bitnp.net:8092/nplive/livestream.m3u8" type="application/x-mpegURL" />
+    <source src="rtmp://livestream.bitnp.net:8092/nplive/" type="rtmp/flv" />
+    <!--
+    <source src="video/bywh/20117.mp4" type="video/mp4" />
+        <source src="video/sqgh/2016.mp4" type="video/webm" />
+        <source src="video/54/2017.mp4" type="video/ogg" />
+    -->
+        <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track>
+        <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track>
+      </video>
+    </div>
+  </div>
+  <div class="back3">
+  <!-- 往期回放 -->
+    <div class="container" style="padding-top: 30px;">
+      <br>
+      <img src="img/huifang.png" class="img-responsive" alt="往期回放" width="150" height="60">
+      <br>
+      <div id="history">
+        <div class="history-section" style="float: left;">
+          <div class="title-more">
+            <div class="title">军理课</div>
+            <div class="more"><a href="#">查看更多 ></a></div>
+          </div>
+          <div class="content">
+            <img src="img/thumbnail.jpg" width="100%" onclick="thisIsNone()">
+            <a href="#" onclick="aaa()">军理第一课</a>
+          </div>
+          <div class="content">
+            <img src="img/thumbnail.jpg" width="100%" onclick="thisIsNone()">
+            <a href="#" onclick="thisIsNone()">军理第二课</a>
+          </div>
+          <div class="content">
+            <img src="img/thumbnail.jpg" width="100%" onclick="thisIsNone()">
+            <a href="#" onclick="thisIsNone()">军理第三课</a>
+          </div>
+          <div class="content">
+            <img src="img/thumbnail.jpg" width="100%" onclick="thisIsNone()">
+            <a href="#" onclick="thisIsNone()">军理第四课</a>
+          </div>
+
+        </div>
+        <hr />
+        <div class="history-section" style="float: left;">
+          <div class="title-more">
+            <div class="title">深秋歌会</div>
+            <div class="more"><a href="#">查看更多 ></a></div>
+          </div>
+          <div class="content">
+            <img src="img/thumbnail.jpg" width="100%" onclick="changeMovie('video/sqgh/2016.mp4')">
+            <a href="#" onclick="changeMovie('video/sqgh/2016.mp4')">2016年度深秋歌会</a>
+          </div>
+          <div class="content">
+            <img src="img/thumbnail.jpg" width="100%" onclick="thisIsNone()">
+            <a href="#" onclick="thisIsNone()">2015年度深秋歌会</a>
+          </div>
+        </div>
+        <hr />
+        <div class="history-section" style="float: left;">
+          <div class="title-more">
+            <div class="title">毕业晚会</div>
+            <div class="more"><a href="#">查看更多 ></a></div>
+          </div>
+          <div class="content">
+            <img src="img/thumbnail.jpg" width="100%" onclick="changeMovie('video/bywh/2017.mp4')">
+            <a href="#" onclick="changeMovie('video/bywh/2017.mp4')">2017年度毕业晚会</a>
+            </div>
+          <div class="content">
+            <img src="img/thumbnail.jpg" width="100%" onclick="thisIsNone()">
+            <a href="#" onclick="thisIsNone()">2016年度毕业晚会</a>
+          </div>
+        </div>
+        <hr />
+        <div class="history-section" style="float: left;">
+          <div class="title-more">
+            <div class="title">......</div>
+            <div class="more"><a href="#">查看更多 ></a></div>
+          </div>
+          <div class="content">
+            <img src="img/thumbnail.jpg" width="100%" onclick="changeMovie('54/2017.mp4')">
+            <a href="#" onclick="changeMovie('video/54/2017.mp4')">54</a>
+          </div>
+          <div class="content">
+            <img src="img/thumbnail.jpg" width="100%" onclick="thisIsNone()">
+            <a href="#" onclick="thisIsNone()">网协技术培训——全栈网络开发</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="back4">
+    <div class="cssc9d9c0fa71a056 bottom" > Copyright 2017 BIT NetPioneer All Rights Reserved. Designed by BITNP. </div>
+    </div>
+
+  <script>
+    layui.use('element', function(){
+      var element = layui.element(); 
+      element.on('nav(demo)', function(elem){
+      //console.log(elem)
+      layer.msg(elem.text());
+      });
+
+  });
+
+
+  </script>
+      <script>
+    function thisIsNone(){
+      alert("暂不开放，敬请期待！");
+    };
+    var videoPlayer = videojs("video_1");
+    function changeMovie(url){
+        videoPlayer.src(url);
+        videoPlayer.load(url);
+        videoPlayer.play();
+    }
+    function aaa(){
+      videoPlayer.width($('.container').eq(1).width());
+    }
+    </script>
+  </body>
+</html>
